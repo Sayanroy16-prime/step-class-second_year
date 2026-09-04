@@ -1,33 +1,33 @@
-class BaseFeeAccount {
+class FeeAccount {
 }
 
-class HostelAccount extends BaseFeeAccount {
+class HostelFeeAccount extends FeeAccount {
 }
 
-public class account {
+public class M5_AccountBatchPayments {
     private static int hostelCount = 0;
     private static int dayScholarCount = 0;
 
-    public static void processPayment(BaseFeeAccount acc, double amount) {
-        if (acc instanceof HostelAccount) {
+    public static void processPayment(FeeAccount account, double amount) {
+        if (account instanceof HostelFeeAccount) {
             System.out.println("Paid in two installments (hostel account)");
             hostelCount++;
-        } else if (acc instanceof BaseFeeAccount) {
+        } else if (account instanceof FeeAccount) {
             System.out.println("Paid in one go (day-scholar account)");
             dayScholarCount++;
         }
     }
 
     public static void main(String[] args) {
-        BaseFeeAccount[] accounts = {
-            new HostelAccount(),
-            new HostelAccount(),
-            new BaseFeeAccount(),
-            new BaseFeeAccount()
+        FeeAccount[] accounts = {
+            new HostelFeeAccount(),
+            new HostelFeeAccount(),
+            new FeeAccount(),
+            new FeeAccount()
         };
         double amount = 60000;
 
-        for (BaseFeeAccount acc : accounts) {
+        for (FeeAccount acc : accounts) {
             processPayment(acc, amount);
         }
 

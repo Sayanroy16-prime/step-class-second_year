@@ -1,8 +1,8 @@
-public class latefee {
+class Account {
     private String regNo;
     private double totalFee;
 
-    public latefee(String regNo, double totalFee) {
+    public Account(String regNo, double totalFee) {
         this.regNo = regNo;
         this.totalFee = totalFee;
     }
@@ -19,14 +19,16 @@ public class latefee {
             System.out.println(regNo + " | Total Fee: Rs " + totalFee + " | Late Fee: Rs " + lateFee);
         }
     }
+}
 
+public class M3_LateFees {
     public static void main(String[] args) {
         String[] regNos = {"RA001", "RA002", "RA003", "RA004"};
         double[] totalFees = {200000, 150000, 180000, 220000};
         int[] daysLate = {10, 0, -2, 5};
 
         for (int i = 0; i < regNos.length; i++) {
-            latefee account = new latefee(regNos[i], totalFees[i]);
+            Account account = new Account(regNos[i], totalFees[i]);
             account.printSummary(daysLate[i]);
         }
     }

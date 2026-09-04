@@ -1,27 +1,27 @@
-class StudentRecord {
+class SrmStudent {
     static String collegeName;
     static String academicYear;
 
     static {
-        collegeName = "SRM";
+        collegeName = "SRM Institute of Science and Technology";
         academicYear = "2024-2025";
         System.out.println("College info loaded");
     }
 
     private String name;
 
-    public StudentRecord(String name) {
+    public SrmStudent(String name) {
         this.name = name;
         System.out.println("Student record created: " + this.name);
     }
 }
 
-public class Main {
+public class M4_OneTimeCollegeSetup {
     public static void main(String[] args) {
         String[] names = {"Ravi", "Meera", "Karthik", "Divya", "Anitha"};
 
         for (String name : names) {
-            new StudentRecord(name);
+            new SrmStudent(name);
         }
     }
 }

@@ -1,8 +1,8 @@
-public class RaiseSalary {
+class Employee {
     private String empId;
     private double salary;
 
-    public RaiseSalary(String empId, double salary) {
+    public Employee(String empId, double salary) {
         this.empId = empId;
         this.salary = salary;
     }
@@ -14,14 +14,16 @@ public class RaiseSalary {
     public void printSummary() {
         System.out.println(empId + " | Final Salary: Rs " + salary);
     }
+}
 
+public class M2_PayrollBatchBonusRound {
     public static void main(String[] args) {
         String[] empIds = {"E-101", "E-102", "E-103", "E-104"};
         double[] startingSalaries = {40000, 55000, 62000, 48000};
         double bonusAmount = 5000;
 
         for (int i = 0; i < empIds.length; i++) {
-            RaiseSalary emp = new RaiseSalary(empIds[i], startingSalaries[i]);
+            Employee emp = new Employee(empIds[i], startingSalaries[i]);
             emp.raiseSalary(bonusAmount);
             emp.printSummary();
         }

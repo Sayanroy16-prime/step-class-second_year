@@ -1,32 +1,36 @@
-public class library {
+class LibraryBook {
     private String title;
     private String isbn;
     private boolean isCatalogued;
 
-    public library(String title, String isbn) {
+    // Constructor with title and isbn
+    public LibraryBook(String title, String isbn) {
         this.title = title;
         this.isbn = (isbn == null || isbn.trim().isEmpty()) ? "PENDING" : isbn;
         this.isCatalogued = true;
     }
 
-    public library(String title) {
+    // Constructor chaining via this(...)
+    public LibraryBook(String title) {
         this(title, "PENDING");
     }
 
     public void printStatus() {
         System.out.println(title + " | " + isbn + " | Catalogued: " + isCatalogued);
     }
+}
 
+public class M1_LibraryBookCataloguing {
     public static void main(String[] args) {
         String[] titles = {"Clean Code", "Untitled Draft", "1984", "Notes"};
         String[] isbns = {"978-0132350884", "", "9780451524935", ""};
 
         for (int i = 0; i < titles.length; i++) {
-            library book;
+            LibraryBook book;
             if (isbns[i] == null || isbns[i].trim().isEmpty()) {
-                book = new library(titles[i]);
+                book = new LibraryBook(titles[i]);
             } else {
-                book = new library(titles[i], isbns[i]);
+                book = new LibraryBook(titles[i], isbns[i]);
             }
             book.printStatus();
         }
